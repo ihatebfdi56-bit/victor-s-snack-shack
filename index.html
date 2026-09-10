@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="The Snack Shack is your school lunch-time snack club.">
+  <title>The Snack Shack | School snacks, sorted</title>
+  <link rel="stylesheet" href="snack-shack.css">
+</head>
+<body class="snack-page">
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="The Snack Shack home"><span class="brand-mark">SS</span><span>The Snack Shack</span></a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#menu">Menu</a>
+      <a href="#how-it-works">How it works</a>
+      <a href="#recipes">Recipes</a>
+    </nav>
+    <button class="cart-button" id="cart-button" type="button" aria-label="Open your snack bag"><span aria-hidden="true">✦</span> Snack bag <b id="cart-count">0</b></button>
+  </header>
+
+  <main id="top">
+    <section class="hero section-wrap" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="kicker">Your school-day pick-me-up <span class="sparkle">✦</span></p>
+        <h1 id="hero-title">Big snack energy.<br><em>Zero lunch-line drama.</em></h1>
+        <a class="button button-dark hero-cta" href="#menu">Browse the menu <span aria-hidden="true">↓</span></a>
+        <p class="hero-intro">The Snack Shack is your school’s student-run snack club, serving sweet and savory bites in Room 214 at lunch.</p>
+        <p class="hero-note"><span class="note-dot"></span> Next-day pickup · Order by 4 PM</p>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a snack box with a cookie, apple, and juice box">
+        <div class="sunburst"></div><div class="doodle doodle-one">✦</div><div class="doodle doodle-two">✳</div>
+        <div class="snack-sticker sticker-cookie">●<small>YUM</small></div>
+        <div class="snack-sticker sticker-apple">♥<small>FRESH</small></div>
+        <div class="juice-box"><span>JUICE</span><i></i></div>
+        <div class="apple-shape"><span></span></div><div class="cookie-shape"><i></i><i></i><i></i></div>
+        <div class="snack-box"><div class="box-top"></div><div class="box-front"><span>SNACK<br>SHACK</span><b>OPEN<br>ME!</b></div></div>
+      </div>
+    </section>
+
+    <section class="menu-section section-wrap" id="menu" aria-labelledby="menu-title">
+      <div class="section-heading">
+        <div><p class="kicker">Made for your 3rd period</p><h2 id="menu-title">The menu</h2></div>
+        <div class="menu-tools"><label class="search-box"><span aria-hidden="true">⌕</span><input id="menu-search" type="search" placeholder="Find a snack" aria-label="Search the menu"></label><button class="filter-button active" type="button" data-filter="all">All</button><button class="filter-button" type="button" data-filter="sweet">Sweet</button><button class="filter-button" type="button" data-filter="savory">Savory</button></div>
+      </div>
+      <div class="menu-grid" id="menu-grid"></div>
+      <p class="empty-state" id="empty-state" hidden>No snacks matched that search. Try another craving.</p>
+    </section>
+
+    <section class="how-section section-wrap" id="how-it-works" aria-labelledby="how-title">
+      <div class="section-heading compact"><div><p class="kicker">Three tiny steps</p><h2 id="how-title">Snack now, sorted tomorrow.</h2></div><p class="section-blurb">No app. No account. Just pick your snack, tell us where to find you, and we’ll handle the rest.</p></div>
+      <div class="steps"><article><span class="step-number">01</span><h3>Pick your snack</h3><p>Tap the plus on anything calling your name.</p></article><article><span class="step-number">02</span><h3>Build your bag</h3><p>Check your bag and leave a delivery spot.</p></article><article><span class="step-number">03</span><h3>Meet your snack</h3><p>We’ll bring it to school the next day.</p></article></div>
+    </section>
+
+    <section class="recipes-section section-wrap" id="recipes" aria-labelledby="recipes-title">
+      <div class="recipe-copy"><p class="kicker">Snack club secrets</p><h2 id="recipes-title">Love it? Make it.</h2><p>Our easiest recipes for after-school experiments, midnight study sessions, and sharing (if you’re feeling generous).</p><button class="button button-light" type="button" id="recipe-button">Open the recipe zine <span aria-hidden="true">↗</span></button></div>
+      <div class="recipe-card"><span>RECIPE<br>ZINE</span><b>01</b><i>★</i></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><span>© 2026 The Snack Shack</span><span class="creator-note">Club started by Mia.</span><span>Made for hungry students, by hungry students.</span><a href="#how-it-works">Questions? See how it works →</a></footer>
+
+  <aside class="cart-drawer" id="cart-drawer" aria-labelledby="bag-title" aria-hidden="true"><div class="drawer-backdrop" id="drawer-backdrop"></div><div class="drawer-panel"><div class="drawer-head"><div><p class="kicker">Your order</p><h2 id="bag-title">Snack bag <span id="bag-count-label">(0)</span></h2></div><button class="icon-button" id="close-cart" type="button" aria-label="Close snack bag">×</button></div><div id="cart-items" class="cart-items"><p class="cart-empty">Your bag is waiting for a good idea.</p><a href="#menu" class="button button-dark" id="empty-shop-link">Browse the menu</a></div><div class="cart-summary" id="cart-summary" hidden><div><span>Total</span><strong id="cart-total">$0.00</strong></div><button class="button button-dark full-width" type="button" id="checkout-button">Choose delivery spot →</button><p class="secure-note">Static demo: your order stays on this device.</p></div></div></aside>
+
+  <dialog class="modal" id="checkout-modal"><button class="icon-button modal-close" type="button" aria-label="Close checkout">×</button><div id="checkout-content"></div></dialog>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="snack-shack.js"></script>
+</body>
+</html>
